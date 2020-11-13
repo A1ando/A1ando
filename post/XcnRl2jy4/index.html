@@ -1,135 +1,112 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head><meta charset="UTF-8">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>艾南岛</title>
-<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1605269497516">
-<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-<link href="//at.alicdn.com/t/font_1806605_dyr0fqhe85.css" rel="stylesheet">
-<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://A1ando.github.io/media/css/prism-3.css">
-<style>
-    @font-face {
-        font-weight: normal;
-        font-style: normal;
-        font-family: 'charganolton';
-        src: url('https://A1ando.github.io/media/fonts/Charganolton.ttf');
-    }
-    @font-face {
-        font-weight: normal;
-        font-style: normal;
-        font-family: 'JetBrainsMono';
-        src: url('https://A1ando.github.io/media/fonts/JetBrainsMono-Regular.eot');
-        src: url('https://A1ando.github.io/media/fonts/JetBrainsMono-Regular.eot?#iefix') format('embedded-opentype'),
-        url('https://A1ando.github.io/media/fonts/JetBrainsMono-Regular.woff2') format('woff2'),
-        url('https://A1ando.github.io/media/fonts/JetBrainsMono-Regular.woff') format('woff'),
-        url('https://A1ando.github.io/media/fonts/JetBrainsMono-Regular.ttf') format('truetype');
-    }
 
-    @font-face {
-        font-weight: bold;
-        font-style: normal;
-        font-family: 'JetBrainsMono';
-        src: url('https://A1ando.github.io/media/fonts/JetBrainsMono-Bold.eot');
-        src: url('https://A1ando.github.io/media/fonts/JetBrainsMono-Bold.eot?#iefix') format('embedded-opentype'),
-        url('https://A1ando.github.io/media/fonts/JetBrainsMono-Bold.woff2') format('woff2'),
-        url('https://A1ando.github.io/media/fonts/JetBrainsMono-Bold.woff') format('woff'),
-        url('https://A1ando.github.io/media/fonts/JetBrainsMono-Bold.ttf') format('truetype');
-    }
-</style>
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>辅料的关键质量属性研究与控制 | 艾南岛</title>
+<meta name="description" content="分享|记录|学习">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1605269739293">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://A1ando.github.io/styles/main.css">
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    
-</head>
-<body>
 
-    <canvas id="canvas">
-</canvas>
 
-<div class="header">
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="https://A1ando.github.io">
-                <img src="https://A1ando.github.io/images/avatar.png?v=1605269497516" width="30" height="30"
-                     class="d-inline-block align-top"
-                     alt="">
-                艾南岛
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    
-                        
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/"
-                                
-                                >首页</a>
-                            </li>
-                        
-                    
-                        
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/archives"
-                                
-                                >归档</a>
-                            </li>
-                        
-                    
-                        
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/tags"
-                                
-                                >标签</a>
-                            </li>
-                        
-                    
-                        
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/post/about"
-                                
-                                >关于</a>
-                            </li>
-                        
-                    
-                </ul>
-            </div>
-        </div>
-    </nav>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://A1ando.github.io">
+        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1605269739293" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://A1ando.github.io">
+        <h1 class="site-title">艾南岛</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
 </div>
-<div id="content" class="container">
-    <div class="row">
-        <div class="col-sm-100 col-lg-9">
-            <div class="shadow-sm post-detail">
-                <article class="post i-card">
-                    <h2 class="post-title">
-                        辅料的关键质量属性研究与控制
-                    </h2>
-                    <div class="post-info">
-                        <time class="post-time">2020-06-21</time>
-                        
-                            <a href="https://A1ando.github.io/tag/zhuan-zai/" class="post-tag i-tag
-                            i-tag-other_1">
-                                #转载
-                            </a>
-                        
-                            <a href="https://A1ando.github.io/tag/yao-ji-xue/" class="post-tag i-tag
-                            i-tag-warning">
-                                #药剂学
-                            </a>
-                        
-                    </div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://i.loli.net/2020/11/13/p8IGyZDxNhXAwPa.jpg')">
+            </div>
+          
+          <h2 class="post-title">辅料的关键质量属性研究与控制</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-06-21</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://A1ando.github.io/tag/zhuan-zai/">
+                    转载
                     
-                        <div class="post-feature-image" style="background-image: url('https://i.loli.net/2020/11/13/p8IGyZDxNhXAwPa.jpg')"></div>
+                      ，
                     
-                    <div class="post-content">
-                        <p><strong>转载</strong> 梅希 <strong>药事纵横</strong></p>
+                  </a>
+                
+                  <a href="https://A1ando.github.io/tag/yao-ji-xue/">
+                    药剂学
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p><strong>转载</strong> 梅希 <strong>药事纵横</strong></p>
 <p>药用辅料是指生产药品时处方中使用到的赋形剂和添加剂，是除了活性成分（原料药，API）或前体药物以外，在安全性方面已进行了合理评估的物质。辅料除了赋形、充当载体、提高稳定性外，还具有增溶、助溶、调节药物释放等重要功能，是可能会影响到制剂的质量、安全性和有效性的重要成分。</p>
 <!-- more -->
 <p>在制剂制备过程中，药用辅料选用是否得当会影响制剂的安全性、有效性、稳定性、经济性和顺应性。<br>
@@ -220,116 +197,49 @@ class4 低溶高渗</p>
 [3] Dongmei Qiang, Jocelyn A.Gunn, Leon Schultz &amp; Z. Jane Li.Evaluation of the impact of sodium lauryl sulfate source variability on solid oral dosage form development [J]. Drug Development and Industrial Pharmacy, 2010; 36(12): 1486–1496.<br>
 [4] Kelly Zhang, Jackson D.Pellett, Ajit S. Narang, Y. John Wang, Yonghua Taylor Zhang. Reactive impurities in large and small molecule pharmaceutical excipients-A review [J]. Trends in Analytical Chemistry,101 (2018) 34-42.</p>
 
-                    </div>
-                </article>
-            </div>
-            <div class="row">
-                <div class="next-post col-6">
-                    
-                        <div class="next">上一篇</div>
-                        <a href="https://A1ando.github.io/post/4S-bYhLyn/">
-                            <h3 class="post-title">
-                                【药剂学】溶出曲线作图
-                            </h3>
-                        </a>
-                    
-                </div>
-                <div class="next-post col-6">
-                    
-                </div>
-            </div>
-            
+          </div>
         </div>
-        <div class="d-none d-lg-block col-lg-3">
-            
-                <div class="toc-card i-card shadow-sm sticky-top">
-    <div class="toc-title i-card-title">目录</div>
-    <div class="toc-content">
-        <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E8%BE%85%E6%96%99%E7%9A%84%E5%85%B3%E9%94%AE%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7cqa"><strong>1、什么是辅料的关键质量属性（CQA）？</strong></a></li>
-<li><a href="#2-%E8%BE%85%E6%96%99%E6%80%A7%E8%B4%A8%E5%B7%AE%E5%BC%82%E4%BB%8E%E4%BD%95%E8%80%8C%E6%9D%A5"><strong>2、辅料性质差异从何而来？</strong></a></li>
-<li><a href="#3-%E5%BD%B1%E5%93%8D%E5%88%B6%E5%89%82cqa%E7%9A%84%E8%BE%85%E6%96%99%E7%89%B9%E6%80%A7"><strong>3、影响制剂CQA的辅料特性</strong></a>
-<ul>
-<li><a href="#%E6%A1%88%E4%BE%8B1%E4%B8%8D%E5%90%8C%E7%B2%89%E4%BD%93%E5%AD%A6%E6%80%A7%E8%B4%A8%E8%BE%85%E6%96%99%E5%AF%B9%E7%9B%B4%E5%8E%8B%E5%B7%A5%E8%89%BA%E4%BA%A7%E5%93%81%E8%B4%A8%E9%87%8F%E7%9A%84%E5%BD%B1%E5%93%8D"><strong>案例1：不同粉体学性质辅料对直压工艺产品质量的影响</strong></a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B2%E4%B8%8D%E5%90%8C%E7%B2%92%E5%BA%A6%E7%94%98%E9%9C%B2%E9%86%87%E5%AF%B9%E6%88%90%E5%93%81%E5%90%AB%E9%87%8F%E7%9A%84%E5%BD%B1%E5%93%8D"><strong>案例2：不同粒度甘露醇对成品含量的影响</strong></a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B3%E4%B8%8D%E5%90%8C%E6%9D%A5%E6%BA%90sls%E5%AF%B9%E5%88%B6%E5%89%82%E5%B7%A5%E8%89%BA%E7%9A%84%E5%BD%B1%E5%93%8D"><strong>案例3：不同来源SLS对制剂工艺的影响</strong></a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B4%E8%BE%85%E6%96%99%E5%8C%96%E5%AD%A6%E7%BB%93%E6%9E%84%E5%BC%8F%E4%B8%8E%E5%8A%9F%E8%83%BD%E7%9A%84%E7%9B%B8%E5%85%B3%E6%80%A7"><strong>案例4：辅料化学结构式与功能的相关性</strong></a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B5%E8%BE%85%E6%96%99%E4%B8%AD%E7%9A%84%E6%B4%BB%E6%80%A7%E6%9D%82%E8%B4%A8"><strong>案例5：辅料中的活性杂质</strong></a></li>
-</ul>
-</li>
-<li><a href="#4-%E8%BE%85%E6%96%99cqa%E7%9A%84%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF"><strong>4、辅料CQA的分析技术</strong></a></li>
-<li><a href="#5-%E8%BE%85%E6%96%99%E8%B4%A8%E6%8E%A7%E7%9B%B8%E5%85%B3%E7%9A%84%E6%8C%87%E5%AF%BC%E5%8E%9F%E5%88%99%E5%92%8C%E8%B4%A8%E9%87%8F%E6%A0%87%E5%87%86"><strong>5、辅料质控相关的指导原则和质量标准</strong></a></li>
-<li><a href="#6-qbd%E7%A0%94%E5%8F%91%E7%90%86%E5%BF%B5%E4%B8%8E%E8%BE%85%E6%96%99%E6%8E%A7%E5%88%B6"><strong>6、QbD研发理念与辅料控制</strong></a></li>
-<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><strong>参考文献</strong></a></li>
-</ul>
-</li>
-</ul>
+
+        
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">分享|记录|学习</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://A1ando.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
 
     </div>
-    <script>
-        function locateCatelogList() {
-            /*获取文章目录集合,可通过:header过滤器*/
-            var alis = $('.post-content :header');
-            /*获取侧边栏目录列表集合**/
-            var sidebar_alis = $('.markdownIt-TOC a');
-            /*获取滚动条到顶部的距离*/
-            var scroll_height = $(window).scrollTop();
-            for (var i = 0; i < alis.length; i++) {
-                /*获取锚点集合中的元素分别到顶点的距离*/
-                var a_height = $(alis[i]).offset().top-150;
-                if (a_height < scroll_height) {
-                    /*高亮显示*/
-                    sidebar_alis.removeClass('on');
-                    $(sidebar_alis[i]).addClass('on');
-                }
-            }
-        }
+    <script type="application/javascript">
 
-        $(function () {
-            /*绑定滚动事件 */
-            $(window).bind('scroll', locateCatelogList);
-        });
-    </script>
-</div>
+hljs.initHighlightingOnLoad()
 
-            
-        </div>
-    </div>
-    <div class="site-footer">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | Theme <a href="//github.com/violetfreesia/gridea-theme-Violet" target="_blank">Violet</a>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-    <script src="https://A1ando.github.io/media/js/TweenMax.min.js"></script>
-
-
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-    </script>
+</script>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-    <script>
-        $('pre').addClass('line-numbers')
-    </script>
-
-</body>
+  </body>
 </html>

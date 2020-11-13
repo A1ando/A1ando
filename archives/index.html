@@ -1,172 +1,152 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>艾南岛</title>
-<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1605269497516">
-<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-<link href="//at.alicdn.com/t/font_1806605_dyr0fqhe85.css" rel="stylesheet">
-<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://A1ando.github.io/media/css/prism-3.css">
-<style>
-    @font-face {
-        font-weight: normal;
-        font-style: normal;
-        font-family: 'charganolton';
-        src: url('https://A1ando.github.io/media/fonts/Charganolton.ttf');
-    }
-    @font-face {
-        font-weight: normal;
-        font-style: normal;
-        font-family: 'JetBrainsMono';
-        src: url('https://A1ando.github.io/media/fonts/JetBrainsMono-Regular.eot');
-        src: url('https://A1ando.github.io/media/fonts/JetBrainsMono-Regular.eot?#iefix') format('embedded-opentype'),
-        url('https://A1ando.github.io/media/fonts/JetBrainsMono-Regular.woff2') format('woff2'),
-        url('https://A1ando.github.io/media/fonts/JetBrainsMono-Regular.woff') format('woff'),
-        url('https://A1ando.github.io/media/fonts/JetBrainsMono-Regular.ttf') format('truetype');
-    }
+<html>
+  <head>
+    
+<meta charset="utf-8" >
 
-    @font-face {
-        font-weight: bold;
-        font-style: normal;
-        font-family: 'JetBrainsMono';
-        src: url('https://A1ando.github.io/media/fonts/JetBrainsMono-Bold.eot');
-        src: url('https://A1ando.github.io/media/fonts/JetBrainsMono-Bold.eot?#iefix') format('embedded-opentype'),
-        url('https://A1ando.github.io/media/fonts/JetBrainsMono-Bold.woff2') format('woff2'),
-        url('https://A1ando.github.io/media/fonts/JetBrainsMono-Bold.woff') format('woff'),
-        url('https://A1ando.github.io/media/fonts/JetBrainsMono-Bold.ttf') format('truetype');
-    }
-</style>
+<title>艾南岛</title>
+<meta name="description" content="分享|记录|学习">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1605269739293">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://A1ando.github.io/styles/main.css">
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-</head>
-<body>
 
-    <canvas id="canvas">
-</canvas>
 
-<div class="header">
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="https://A1ando.github.io">
-                <img src="https://A1ando.github.io/images/avatar.png?v=1605269497516" width="30" height="30"
-                     class="d-inline-block align-top"
-                     alt="">
-                艾南岛
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    
-                        
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/"
-                                
-                                >首页</a>
-                            </li>
-                        
-                    
-                        
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/archives"
-                                
-                                >归档</a>
-                            </li>
-                        
-                    
-                        
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/tags"
-                                
-                                >标签</a>
-                            </li>
-                        
-                    
-                        
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/post/about"
-                                
-                                >关于</a>
-                            </li>
-                        
-                    
-                </ul>
-            </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://A1ando.github.io">
+        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1605269739293" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://A1ando.github.io">
+        <h1 class="site-title">艾南岛</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+        <div class="content-container">
+          
+          
+
+<div class="archives-container">
+  
+    <h2 class="year">2020</h2>
+    
+      
+        <article class="post">
+          <a href="https://A1ando.github.io/post/4S-bYhLyn/">
+            <h2 class="post-title">
+              【药剂学】溶出曲线作图
+              <small>2020-07-20</small>
+            </h2>
+          </a>
+        </article>
+      
+    
+      
+        <article class="post">
+          <a href="https://A1ando.github.io/post/XcnRl2jy4/">
+            <h2 class="post-title">
+              辅料的关键质量属性研究与控制
+              <small>2020-06-21</small>
+            </h2>
+          </a>
+        </article>
+      
+    
+  
+</div>
+
+
         </div>
-    </nav>
-</div>
-<div id="content" class="container">
+
+        <div class="site-footer">
+  <div class="slogan">分享|记录|学习</div>
+  <div class="social-container">
     
-
-<div class="archives-container main-container">
-    <ul class="timeline">
-        
-            <li>
-                <h3 class="year">
-                    2020
-                </h3>
-                <ul class="year-wrapper">
-                    
-                        
-                            <li>
-                                <span class="date">2020-07-20</span>
-                                <a class="title" href="https://A1ando.github.io/post/4S-bYhLyn/">
-                                    <span>【药剂学】溶出曲线作图</span>
-                                </a>
-                            </li>
-                        
-                    
-                        
-                            <li>
-                                <span class="date">2020-06-21</span>
-                                <a class="title" href="https://A1ando.github.io/post/XcnRl2jy4/">
-                                    <span>辅料的关键质量属性研究与控制</span>
-                                </a>
-                            </li>
-                        
-                    
-                </ul>
-
-            </li>
-        
-    </ul>
-</div>
+      
     
-    <div class="site-footer">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | Theme <a href="//github.com/violetfreesia/gridea-theme-Violet" target="_blank">Violet</a>
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://A1ando.github.io/atom.xml" target="_blank">RSS</a>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-    <script src="https://A1ando.github.io/media/js/TweenMax.min.js"></script>
 
 
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-    </script>
+      </div>
+      <script type="application/javascript">
 
+hljs.initHighlightingOnLoad()
 
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-
-
-
-
+</script>
 
 
 
 
-
-
-
-</div>
-</body>
+    </div>
+  </body>
 </html>
