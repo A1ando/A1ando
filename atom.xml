@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://A1ando.github.io</id>
     <title>艾南岛</title>
-    <updated>2020-11-13T12:15:40.238Z</updated>
+    <updated>2020-11-14T16:08:15.003Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://A1ando.github.io"/>
     <link rel="self" href="https://A1ando.github.io/atom.xml"/>
@@ -10,6 +10,168 @@
     <logo>https://A1ando.github.io/images/avatar.png</logo>
     <icon>https://A1ando.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 艾南岛</rights>
+    <entry>
+        <title type="html"><![CDATA[Python 字符串操作笔记]]></title>
+        <id>https://A1ando.github.io/post/VaprSYn2k/</id>
+        <link href="https://A1ando.github.io/post/VaprSYn2k/">
+        </link>
+        <updated>2020-11-14T15:44:23.000Z</updated>
+        <summary type="html"><![CDATA[<p>对python3.x中字符串的操作进行积累，不定时更新</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>对python3.x中字符串的操作进行积累，不定时更新</p>
+<!-- more -->
+<h2 id="1-替换">1 替换</h2>
+<p>替换常用函数为<code>str.replace()</code>，示例如下：</p>
+<pre><code class="language-python">&gt;&gt;&gt; a = 'a w e s o m e P y t h o n'
+&gt;&gt;&gt; a.replace(' ', '') # 注意这里是用空值替代了空格
+awesomePython
+&gt;&gt;&gt; a.replace(' ', '', 2) # 后面的参数指定替代次数，默认为-1，即全部代替
+'awe s o m e P y t h o n '
+</code></pre>
+<p>拓展——其他替代操作</p>
+<ul>
+<li><code>re.sub()</code></li>
+</ul>
+<pre><code class="language-Python">&gt;&gt;&gt; import re
+&gt;&gt;&gt; s = 'hello\tworld\t\n'
+&gt;&gt;&gt; re.sub('\s+', ' ', s)
+'hello world '
+
+</code></pre>
+<ul>
+<li><code>str.translate()</code></li>
+</ul>
+<pre><code class="language-python">&gt;&gt;&gt; s = 'python\fis\tawesome\r\n'
+&gt;&gt;&gt; remap = {
+    ord('\f'): ' ',
+    ord('\t'): ' ',
+    ord('\r'): None,   # ord()返回对象的ASCII值或者Unicode值
+}
+&gt;&gt;&gt; s.translate(remap)
+'python is awesome\n'
+</code></pre>
+<p>一般情况下，<code>str.replace()</code>是较快的，其它方法会比较慢，但是对于复杂的重映射，使用<code>translate()</code>方法更加易读而且快捷。当然，碰到具体的问题可以做性能对比，选择最优的函数。</p>
+<h2 id="2-对齐">2 对齐</h2>
+<h3 id="21-just-ljust-rjust">2.1 <code>just()</code>、<code>ljust()</code>、<code>rjust()</code></h3>
+<pre><code class="language-python">&gt;&gt;&gt; text = 'Hello World'
+&gt;&gt;&gt; text.ljust(20)
+'Hello World         '
+&gt;&gt;&gt; text.rjust(20)
+'         Hello World'
+&gt;&gt;&gt; text.center(20)
+'    Hello World     '
+</code></pre>
+<p>这些方法都可以接受<mark>一个</mark>可选的填充字符，两个以上报错。例如：</p>
+<pre><code class="language-python">&gt;&gt;&gt; text.rjust(20, '=')
+'=========Hello World'
+</code></pre>
+<h3 id="22-format">2.2 <code>format()</code></h3>
+<p><code>format()</code>函数也可以对齐，<code>&lt;</code> 、<code>&gt;</code>、<code>^</code>分别代表左对齐、右对齐和居中。</p>
+<pre><code class="language-python">&gt;&gt;&gt; format(text, '&gt;20')
+'         Hello World'
+&gt;&gt;&gt; format(text, '=&lt;20')
+'Hello World========='
+&gt;&gt;&gt; format(text, '*^20')
+'****Hello World*****'
+</code></pre>
+<p>而且，当格式化多个值时，这些格式化代码也可以用在<code>format()</code>方法中。</p>
+<pre><code class="language-python">&gt;&gt;&gt; '空格{:&gt;10s}空格{:&gt;10s}空格'.format('hello', 'A1ando')
+'空格     hello空格    A1ando空格'
+</code></pre>
+<p><code>format()</code>不仅可以用于字符串，它能作用于任何值</p>
+<pre><code class="language-python">&gt;&gt;&gt; X = 1.2356
+&gt;&gt;&gt; format(X, '&gt;10.2f')
+'      1.24'
+&gt;&gt;&gt; format(X, '^10.2f')
+'   1.24   '
+</code></pre>
+<h2 id="3-格式化">3 格式化</h2>
+<h3 id="31">3.1 <code>%</code></h3>
+<pre><code class="language-python">&gt;&gt;&gt; X = '%s是我的学生'
+&gt;&gt;&gt; X % '张三'
+'张三是我的学生'
+</code></pre>
+<h3 id="32-format">3.2 <code>format()</code></h3>
+<pre><code class="language-python">&gt;&gt;&gt; X = '{}是我的学生'
+&gt;&gt;&gt; X.format('张三')
+'张三是我的学生'
+&gt;&gt;&gt; s = '{name} has {n} messages'
+&gt;&gt;&gt; s.format(n=4，name='A1ando')
+'A1ando has 4 messages'
+
+&gt;&gt;&gt; s = '{} has {} messages'
+&gt;&gt;&gt; s.format('Alando', 4)
+'Alando has 4 messages'
+
+&gt;&gt;&gt; s = '{0} has {1} messages'
+&gt;&gt;&gt; s.format('Alando', 4)
+'Alando has 4 messages'        # 字符串中{x}的标记x是为了在格式化的时候方便指定内容
+</code></pre>
+<h3 id="32-f-string">3.2 <code>f-string</code></h3>
+<pre><code class="language-python">&gt;&gt;&gt; X = '张三'
+&gt;&gt;&gt; f'{X}是我的学生'
+'张三是我的学生'
+</code></pre>
+<h3 id="34-上述三者对比">3.4 上述三者对比</h3>
+<p><code>%</code>更多适用于大段预先准备好的文本中某些地方的替代，例如下面一段文本：</p>
+<pre><code>亲爱的%：
+	您本次预定的%号列车即将在%发车，请您准时抵达！
+	...
+</code></pre>
+<p>这份文本在读取到参数<code>f</code>中，那么很容易用<code>f % ('王先生'， 'G105', '2020-11-6 13：00')</code>来格式化，批量用不同的信息取代。</p>
+<p><code>format()</code>和<code>f-string</code>更加适合在代码中使用，特别是后者使得程序更易读。</p>
+<h2 id="4-拼接">4 拼接</h2>
+<p>要合并的对象在一个可迭代对象中，使用<code>join()</code>是最快的方法</p>
+<pre><code class="language-python">&gt;&gt;&gt; parts = ['Is', 'Beijing', 'Not', 'a', 'Capital']
+&gt;&gt;&gt; ' '.join(parts)
+'Is Beijing Not a Capital'
+&gt;&gt;&gt; ','.join(parts)
+'Is,Beijing,Not,a,Capital'
+&gt;&gt;&gt; ''.join(parts)
+'IsBeijingNotaCapital'
+&gt;&gt;&gt; data = ['Lee', 26, 178, 20000]
+&gt;&gt;&gt; ', '.join(str(i) for i in data)
+'Lee, 26, 178, 20000'
+</code></pre>
+<p>简单少量字符串拼接使用<code>+</code>即可</p>
+<pre><code class="language-Python">&gt;&gt;&gt; a = 'I Lova'
+&gt;&gt;&gt; b = 'China'
+&gt;&gt;&gt; c = 'Monney'
+&gt;&gt;&gt; a + b
+'I Love China'
+&gt;&gt;&gt; a + c
+'I Love Monney'
+</code></pre>
+<p><strong>3 格式化</strong>中的内容也可以看作是字符串的拼接。</p>
+<p><code>print()</code>语句中有参数<code>sep=</code>，使用这个参数能有效的进行打印的拼接</p>
+<pre><code class="language-Python">&gt;&gt;&gt; a = 'Lee'
+&gt;&gt;&gt; b = 'Cheel'
+&gt;&gt;&gt; c = 'wood'
+&gt;&gt;&gt; print(a, b, c, sep=':')
+Lee:Cheel:wood
+</code></pre>
+<p>有如下的问题，我要将不断收集到的片段信息保存到文本中，但是片段信息有时候是长度很小的字符串，有时候长度很大，考虑将片段积累到一定的长度后，再一次性写入，重复这一操作，最终将信息全部保存，代码如下：</p>
+<pre><code class="language-Python">def combine(src, maxsize):
+    parts = []
+    size = []
+    for part in src:
+        parts.append(part)
+        size += len(part)
+        if size &gt; maxsize:
+            yield ''.join(parts)
+            parts = []
+            size = 0
+	yield ''.join(parts) # 当src中所有的片段累积长度仍旧小于指定的最大长度时，返回拼接后的src。
+    
+f = open(filename, 'w', encoding= 'utf8')    
+for part in combine(sample(), 32768):
+    f.write(part)
+f.close()
+</code></pre>
+<p><em><strong>To Be Continued…</strong></em></p>
+<p><strong>【外链】</strong><a href="https://blog.csdn.net/weixin_44747933/article/details/89062640">有趣的编程原理图解</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【药剂学】溶出曲线作图]]></title>
         <id>https://A1ando.github.io/post/4S-bYhLyn/</id>
