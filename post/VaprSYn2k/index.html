@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1605370695259">
+<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1605419542361">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://A1ando.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://A1ando.github.io">
-        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1605370695259" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1605419542361" alt="" width="32px" height="32px">
       </a>
       <a href="https://A1ando.github.io">
         <h1 class="site-title">艾南岛</h1>
@@ -112,7 +112,7 @@
 <p>替换常用函数为<code>str.replace()</code>，示例如下：</p>
 <pre><code class="language-python">&gt;&gt;&gt; a = 'a w e s o m e P y t h o n'
 &gt;&gt;&gt; a.replace(' ', '') # 注意这里是用空值替代了空格
-awesomePython
+'awesomePython'
 &gt;&gt;&gt; a.replace(' ', '', 2) # 后面的参数指定替代次数，默认为-1，即全部代替
 'awe s o m e P y t h o n '
 </code></pre>
@@ -124,7 +124,6 @@ awesomePython
 &gt;&gt;&gt; s = 'hello\tworld\t\n'
 &gt;&gt;&gt; re.sub('\s+', ' ', s)
 'hello world '
-
 </code></pre>
 <ul>
 <li><code>str.translate()</code></li>
@@ -202,8 +201,8 @@ awesomePython
 </code></pre>
 <h3 id="34-上述三者对比">3.4 上述三者对比</h3>
 <p><code>%</code>更多适用于大段预先准备好的文本中某些地方的替代，例如下面一段文本：</p>
-<pre><code>亲爱的%：
-	您本次预定的%号列车即将在%发车，请您准时抵达！
+<pre><code>亲爱的%s：
+	您本次预定的%s号列车即将在%s发车，请您准时抵达！
 	...
 </code></pre>
 <p>这份文本在读取到参数<code>f</code>中，那么很容易用<code>f % ('王先生'， 'G105', '2020-11-6 13：00')</code>来格式化，批量用不同的信息取代。</p>
@@ -224,11 +223,11 @@ awesomePython
 <p>简单少量字符串拼接使用<code>+</code>即可</p>
 <pre><code class="language-Python">&gt;&gt;&gt; a = 'I Lova'
 &gt;&gt;&gt; b = 'China'
-&gt;&gt;&gt; c = 'Monney'
+&gt;&gt;&gt; c = 'Money'
 &gt;&gt;&gt; a + b
 'I Love China'
 &gt;&gt;&gt; a + c
-'I Love Monney'
+'I Love Money'
 </code></pre>
 <p><strong>3 格式化</strong>中的内容也可以看作是字符串的拼接。</p>
 <p><code>print()</code>语句中有参数<code>sep=</code>，使用这个参数能有效的进行打印的拼接</p>
@@ -241,7 +240,7 @@ Lee:Cheel:wood
 <p>有如下的问题，我要将不断收集到的片段信息保存到文本中，但是片段信息有时候是长度很小的字符串，有时候长度很大，考虑将片段积累到一定的长度后，再一次性写入，重复这一操作，最终将信息全部保存，代码如下：</p>
 <pre><code class="language-Python">def combine(src, maxsize):
     parts = []
-    size = []
+    size = 0
     for part in src:
         parts.append(part)
         size += len(part)
