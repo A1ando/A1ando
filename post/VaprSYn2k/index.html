@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1605427119426">
+<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1605427577178">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://A1ando.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://A1ando.github.io">
-        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1605427119426" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1605427577178" alt="" width="32px" height="32px">
       </a>
       <a href="https://A1ando.github.io">
         <h1 class="site-title">艾南岛</h1>
@@ -195,9 +195,23 @@
 'Alando has 4 messages'        # 字符串中{x}的标记x是为了在格式化的时候方便指定内容
 </code></pre>
 <h3 id="32-f-string">3.2 <code>f-string</code></h3>
+<p>f-string用大括号 <code>{}</code> 可以填入表达式或调用函数，Python会求出其结果并填入返回的字符串内：</p>
 <pre><code class="language-python">&gt;&gt;&gt; X = '张三'
 &gt;&gt;&gt; f'{X}是我的学生'
 '张三是我的学生'
+&gt;&gt;&gt; f'A total number of {24 * 8 + 4}'
+'A total number of 196'
+
+&gt;&gt;&gt; f'complex number {(2 + 2j) / (2 - 3j)}'
+'Comelex number (结果)'
+
+&gt;&gt;&gt; name = 'ERIC'
+&gt;&gt;&gt;f'My name is {name.lower()}'
+'My name is eric'
+
+&gt;&gt;&gt; import math
+&gt;&gt;&gt; f'The answer is {math.log(math.pi)}'
+'The answer is 1.1447298858494002'
 </code></pre>
 <h3 id="34-上述三者对比">3.4 上述三者对比</h3>
 <p><code>%</code>更多适用于大段预先准备好的文本中某些地方的替代，例如下面一段文本：</p>
