@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1605424187757">
+<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1605424604103">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://A1ando.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://A1ando.github.io">
-        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1605424187757" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1605424604103" alt="" width="32px" height="32px">
       </a>
       <a href="https://A1ando.github.io">
         <h1 class="site-title">艾南岛</h1>
@@ -130,7 +130,7 @@
 </tr>
 <tr>
 <td>可以含有汉字、数字、字母、下划线</br>但不能以下划线开头和结尾</td>
-<td><p style="color:red">^(?!_)(?!.*?_$)[a-zA-Z0-9_\u4e00-\u9fa5]+$</p></td>
+<td><p style="color:red">^(?!_)(?!.*?_<span class='katex-error' title='ParseError: KaTeX parse error: Got function &#039;\u&#039; with no arguments as subscript at position 13: )[a-zA-Z0-9_\̲u̲4e00-\u9fa5]+'>)[a-zA-Z0-9_\u4e00-\u9fa5]+</span></p></td>
 </tr>
 <tr>
 <td>2~4个汉字</td>
@@ -156,10 +156,12 @@
 <td>URL地址</td>
 <td><p style="color:red">^http://([\w-]+.)+[\w-]+(/[\w-./?%&amp;=]*)?$</p></td>
 </tr>
+<tr>
+<td>长度8-10的用户密码（以字母开头）</td>
+<td><p style="color:red">^[a-zA-Z]\w{7,9}$</p></td>
+</tr>
 </tbody>
 </table>
-<pre><code>                    | &lt;p style=&quot;color:red&quot;&gt;\^[a-zA-Z]\w{7,9}$&lt;/p&gt;                  |
-</code></pre>
 <p><em><strong>To Be Continued</strong></em></p>
 
           </div>
