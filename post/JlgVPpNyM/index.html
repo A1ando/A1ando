@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1605696391704">
+<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1605706922217">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://A1ando.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://A1ando.github.io">
-        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1605696391704" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1605706922217" alt="" width="32px" height="32px">
       </a>
       <a href="https://A1ando.github.io">
         <h1 class="site-title">艾南岛</h1>
@@ -196,6 +196,25 @@ if __name__ == '__main__':
 <li>zfill() 将数字的字符串左边填充0直到字符串满足给定的长度，如果元字符串长度超过给定的值，则不变</li>
 <li>enumerate(list) 生成有序列表，每个元素是一个元组(x, y)，x为int类型的序数， y为list中的元素</li>
 </ul>
+<p>上面的程序改写，文件结构如下，即pics、rename_it.py、text.txt为同级文件：</p>
+<pre><code>|---pics	        #装有图片的文件夹
+|---rename_it.py	#脚本程序
+|---text.txt		#下载顺序列表
+</code></pre>
+<p>简单的<code>rename_it.py</code>程序如下：</p>
+<pre><code class="language-python">import os
+
+
+base = {}
+with open('text.txt', 'r', encoding='utf8') as f:
+    for i, order in enumerate(f):
+        base[order] = str(i+1)
+
+pic_path = './pics'
+for pic in os.listdir(pic_path):
+    os.renames(pic_path+pic, pic_path+base[pic].zfill(3)+'.jpg')
+    
+</code></pre>
 
           </div>
         </div>
