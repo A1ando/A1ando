@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://A1ando.github.io</id>
     <title>艾南岛</title>
-    <updated>2020-11-15T08:06:24.018Z</updated>
+    <updated>2020-11-18T10:46:37.422Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://A1ando.github.io"/>
     <link rel="self" href="https://A1ando.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://A1ando.github.io/images/avatar.png</logo>
     <icon>https://A1ando.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 艾南岛</rights>
+    <entry>
+        <title type="html"><![CDATA[Python小程序（1）批量按下载顺序重命名文件]]></title>
+        <id>https://A1ando.github.io/post/JlgVPpNyM/</id>
+        <link href="https://A1ando.github.io/post/JlgVPpNyM/">
+        </link>
+        <updated>2020-11-15T13:24:16.000Z</updated>
+        <summary type="html"><![CDATA[<p>当我们采集到一组图片的下载链接，使用<strong>IDM</strong>按照顺序批量下载图片后，下载后的文件名称一般是链接最后的文件名，想要将它按照下载顺序进行编号，方法是建立字典<code>dict = {'文件名': '序号'}</code>，然后利用<code>os.renames()</code>进行重命名即可。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>当我们采集到一组图片的下载链接，使用<strong>IDM</strong>按照顺序批量下载图片后，下载后的文件名称一般是链接最后的文件名，想要将它按照下载顺序进行编号，方法是建立字典<code>dict = {'文件名': '序号'}</code>，然后利用<code>os.renames()</code>进行重命名即可。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[正则表达式]]></title>
         <id>https://A1ando.github.io/post/Pvf7F4ytU/</id>
