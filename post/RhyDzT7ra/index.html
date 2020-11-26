@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1606404928970">
+<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1606405524904">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://A1ando.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://A1ando.github.io">
-        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1606404928970" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1606405524904" alt="" width="32px" height="32px">
       </a>
       <a href="https://A1ando.github.io">
         <h1 class="site-title">艾南岛</h1>
@@ -155,7 +155,7 @@ def validate(ID):
 def get_area(ID):
     global flag
     birth = ID[0:6]
-    path = r'全国行政区域身份证代码表(utf-8-sig).csv'
+    path = r'地区码(utf-8-sig).csv'
     df = pd.read_csv(path, encoding='utf-8-sig')
     if int(birth) &gt;= 110101:  # 没有这个判断，数值低于110101的地区码会显示为‘北京市市辖区东城区’
         try:
@@ -213,6 +213,7 @@ if __name__ == '__main__':
         print(i)
 
 </code></pre>
+<p>地区码csv文件链接：https://pan.baidu.com/s/1PabugPBCSDEgq_ibv4YihQ   提取码：rdnd</p>
 
           </div>
         </div>
