@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://A1ando.github.io</id>
     <title>艾南岛</title>
-    <updated>2020-11-18T13:49:30.642Z</updated>
+    <updated>2020-11-26T15:35:31.926Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://A1ando.github.io"/>
     <link rel="self" href="https://A1ando.github.io/atom.xml"/>
@@ -10,6 +10,47 @@
     <logo>https://A1ando.github.io/images/avatar.png</logo>
     <icon>https://A1ando.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 艾南岛</rights>
+    <entry>
+        <title type="html"><![CDATA[Python小程序（2）身份证号码校验并提取信息]]></title>
+        <id>https://A1ando.github.io/post/RhyDzT7ra/</id>
+        <link href="https://A1ando.github.io/post/RhyDzT7ra/">
+        </link>
+        <updated>2020-11-26T15:33:51.000Z</updated>
+        <summary type="html"><![CDATA[<p>身份证号码主要包括以下知识点：</p>
+<ul>
+<li>
+<p><strong>地区码</strong>：按照GB/T2260执行，通常1开头为华北地区、2开头为东北地区、3开头为华东地区、4开头为华中地区和华南地区、5开头为西南地区、6开头为西北地区、7和8开头为特别地区。</p>
+</li>
+<li>
+<p><strong>出生日期码</strong>：按GB/T7408执行</p>
+</li>
+<li>
+<p><strong>顺序码</strong>：表示同一地址码所标识的区域范围内，对同年同月出生的人编订的顺序号，奇数分为男性、偶数分给女性</p>
+</li>
+<li>
+<p><strong>校验码</strong>：按照ISO 7064:1983.MOD11-2计算出来的校验码得到第18位数字</p>
+<p>校验方法：详见<code>validate(ID)</code>函数</p>
+</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<p>身份证号码主要包括以下知识点：</p>
+<ul>
+<li>
+<p><strong>地区码</strong>：按照GB/T2260执行，通常1开头为华北地区、2开头为东北地区、3开头为华东地区、4开头为华中地区和华南地区、5开头为西南地区、6开头为西北地区、7和8开头为特别地区。</p>
+</li>
+<li>
+<p><strong>出生日期码</strong>：按GB/T7408执行</p>
+</li>
+<li>
+<p><strong>顺序码</strong>：表示同一地址码所标识的区域范围内，对同年同月出生的人编订的顺序号，奇数分为男性、偶数分给女性</p>
+</li>
+<li>
+<p><strong>校验码</strong>：按照ISO 7064:1983.MOD11-2计算出来的校验码得到第18位数字</p>
+<p>校验方法：详见<code>validate(ID)</code>函数</p>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Python小程序（1）批量按下载顺序重命名文件]]></title>
         <id>https://A1ando.github.io/post/JlgVPpNyM/</id>
