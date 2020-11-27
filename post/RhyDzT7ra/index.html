@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1606405524904">
+<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1606475608885">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://A1ando.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://A1ando.github.io">
-        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1606405524904" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1606475608885" alt="" width="32px" height="32px">
       </a>
       <a href="https://A1ando.github.io">
         <h1 class="site-title">艾南岛</h1>
@@ -132,13 +132,9 @@
 <!-- more -->
 <pre><code class="language-Python">import pandas as pd
 from datetime import datetime
-import bisect
 
 
-flag = False
-
-def validate(ID):
-    global flag
+def validate(ID, flag=False):
     validate_seq = list('10x98765432')
     factor_seq = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
 
@@ -148,27 +144,49 @@ def validate(ID):
             if ID[-1].lower() == validate_seq[index]:
                 flag = True
         except ValueError:
-            flag = False
+            pass
     return flag
 
 
-def get_area(ID):
-    global flag
+# f'升序数列为{arr}，从{left}到{right}的索引范围内查找{x}的索引')
+def bi_search(arr, x, left=0, right=None):
+    if right is None:
+        right = len(arr)
+    while left &lt;= right:
+        # 找到中间位置。求中点写成(left+right)/2更容易溢出，所以不建议这样写
+        mid = int(left + (right - left) / 2)
+
+        # 检查x是否出现在位置mid
+        if arr[mid] == x:
+            # print('found %d 在索引位置%d 处' % (x, mid))
+            return mid
+
+        # 假如x更大，则不可能出现在左半部分
+        elif arr[mid] &lt; x:
+            left = mid + 1  # 搜索区间变为[mid+1,right]
+            # print('区间缩小为[%d,%d]' % (mid + 1, right))
+
+        # 同理，假如x更小，则不可能出现在右半部分
+        else:
+            right = mid - 1  # 搜索区间变为[left,mid-1]
+            # print('区间缩小为[%d,%d]' % (left, mid - 1))
+
+    # 假如搜索到这里，表明x未出现在[left,right]中
+    raise ValueError
+
+
+def get_area(ID, flag=False):
     birth = ID[0:6]
     path = r'地区码(utf-8-sig).csv'
     df = pd.read_csv(path, encoding='utf-8-sig')
-    if int(birth) &gt;= 110101:  # 没有这个判断，数值低于110101的地区码会显示为‘北京市市辖区东城区’
-        try:
-            index = bisect.bisect_left(df['areacode'], int(birth))
-            return df['nativeplace'][index]
-        except KeyError:
-            pass
-    else:
+    try:
+        index = bi_search(df['areacode'], int(birth))
+        return df['nativeplace'][index]
+    except ValueError:
         return flag
 
 
-def get_birth(ID):
-    global flag
+def get_birth(ID, flag=False):
     birth = ID[6:14]
     date_from = datetime(year=1900, month=1, day=1)  # 1900-01-01 00:00:00
     date_to = datetime.today()
@@ -194,26 +212,28 @@ def run(lst):
     for ID in lst:
         ID = str(ID)
         # 全部校验flag,任何一处有问题说明身份证号无效
-        if validate(ID) and get_area(ID) and get_birth(ID):  
-            yield {'身份证号': ID,
-                   '户籍所在地': get_area(ID),
-                   '出生日期': get_birth(ID)['birthday'],
-                   '年龄': get_birth(ID)['age'],
-                   '性别': get_gender(ID)}
+        if validate(ID) and get_birth(ID):
+            if get_area(ID):
+                yield {'身份证号': ID,
+                       '发证地': get_area(ID),
+                       '出生日期': get_birth(ID)['birthday'],
+                       '年龄': get_birth(ID)['age'],
+                       '性别': get_gender(ID)}
+            else:
+                print(f'{ID} 发证地已撤并，请更新地区码文件！')
         else:
             print(f'{ID} 身份证号无效！')
 
 
 if __name__ == '__main__':
     # 从网上找一些身份证号码验证
-    ID_lst = [130532197901235712, 513221197102183838,
-              500101198401133397, 431128198405258384, 150900198904133964,
-              '44092319850718266X', '36100119860426330X']
+    ID_lst = [433101199607123521, '33900519930206581x']
     for i in run(ID_lst):
         print(i)
 
 </code></pre>
-<p>地区码csv文件链接：https://pan.baidu.com/s/1PabugPBCSDEgq_ibv4YihQ   提取码：rdnd</p>
+<p><strong>地区码(utf-8-sig).csv</strong>链接: https://pan.baidu.com/s/1br4EX7M_1w9OHHHwZD-Uaw<br>
+提取码: pes4</p>
 
           </div>
         </div>
