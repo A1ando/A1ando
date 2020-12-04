@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://A1ando.github.io</id>
     <title>艾南岛</title>
-    <updated>2020-11-27T11:13:34.465Z</updated>
+    <updated>2020-12-04T15:03:52.855Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://A1ando.github.io"/>
     <link rel="self" href="https://A1ando.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://A1ando.github.io/images/avatar.png</logo>
     <icon>https://A1ando.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 艾南岛</rights>
+    <entry>
+        <title type="html"><![CDATA[在回调函数中携带额外的状态]]></title>
+        <id>https://A1ando.github.io/post/1ELoXq5zv/</id>
+        <link href="https://A1ando.github.io/post/1ELoXq5zv/">
+        </link>
+        <updated>2020-12-04T14:47:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>闭包、回调函数的利用</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>闭包、回调函数的利用</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Python小程序（2）身份证号码校验并提取信息]]></title>
         <id>https://A1ando.github.io/post/RhyDzT7ra/</id>
