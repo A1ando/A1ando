@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1608553247345">
+<link rel="shortcut icon" href="https://A1ando.github.io/favicon.ico?v=1608555403318">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://A1ando.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://A1ando.github.io">
-        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1608553247345" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://A1ando.github.io/images/avatar.png?v=1608555403318" alt="" width="32px" height="32px">
       </a>
       <a href="https://A1ando.github.io">
         <h1 class="site-title">艾南岛</h1>
@@ -108,29 +108,38 @@
           <div class="post-content">
             <p>学习python过程中的杂记，觉得有用的就积累，不定时的补充，温故知新！</p>
 <!-- more -->
-<h2 id="时间20200522">时间：2020.05.22</h2>
+<h1 id="python学习笔记">Python学习笔记</h1>
+<h2 id="1-列表中查找最值">1. 列表中查找最值</h2>
+<p>时间：2020.05.22</p>
 <img src="https://i.loli.net/2020/12/20/nsoV9X8hUqrNJGm.png" alt="list(item)中查找N个最值"  />
-<h2 id="时间20200523">时间2020.05.23</h2>
+<h2 id="2-cookbook第一章">2. Cookbook第一章</h2>
+<p>时间2020.05.23</p>
 <p>对Python Cookbook第一章进行小结</p>
 <figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/12/20/3DENfA6cILWMC7S.png" alt="第一章 数据结构和算法" loading="lazy"></figure>
-<h2 id="时间20200523-2">时间2020.05.23</h2>
+<h2 id="3-html模式查看pydoc文件">3. HTML模式查看pydoc文件</h2>
+<p>时间2020.05.23</p>
 <p>本地动态生成</p>
 <ol>
 <li>在CMD命令行窗口中输入：<code>python -m pydoc -p 1234</code></li>
-<li>接着输入<code>b</code>启动浏览</li>
+<li>接着输入<code>b</code>启动浏览；输入<code>q</code>退出</li>
 </ol>
 <p>第三方安装源</p>
+<ul>
+<li>清华源</li>
+</ul>
 <p>​	<code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyqt5</code></p>
-<h2 id="时间20200801">时间2020.08.01</h2>
+<h2 id="4-__init__和__new__">4. <code>__init__</code>和<code>__new__</code></h2>
+<p>时间2020.08.01</p>
 <p><code>__init__</code>和<code>__new__</code>详解https://www.bilibili.com/video/BV1vA411b7Rn?p=58</p>
 <p><code>__str__</code>方法</p>
 <figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/12/20/nDia79A5z2jZxbe.jpg" alt="Snipaste_2020-08-01_18-48-59" loading="lazy"></figure>
 <p><code>__del__</code>方法</p>
 <p>面向对象的编程：封装、继承和多态</p>
-<h2 id="时间20201101">时间2020.11.01</h2>
+<h2 id="5-repr和str">5. <code>repr()</code>和<code>str()</code></h2>
+<p>时间2020.11.01</p>
 <p><code>repr()</code>和<code>str()</code>的区别https://blog.csdn.net/kongsuhongbaby/article/details/87398394</p>
-<h2 id="时间20201123">时间2020.11.23</h2>
-<h3 id="浅拷贝和深拷贝">浅拷贝和深拷贝</h3>
+<h2 id="6-浅拷贝和深拷贝">6. 浅拷贝和深拷贝</h2>
+<p>时间2020.11.23</p>
 <pre><code class="language-Python">row = ['_'] * 3
 print(row)
 board = []
@@ -157,19 +166,22 @@ print(board)
 [['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
 [['_', '_', '_'], ['_', '_', 'X'], ['_', '_', '_']]
 </code></pre>
-<h3 id="python-tutor"><a href="http://www.pythontutor.com/">Python Tutor</a></h3>
+<h2 id="7-python-tutor">7. <a href="http://www.pythontutor.com/">Python Tutor</a></h2>
+<p>方便查看python程序具体怎么运行的！</p>
 <figure data-type="image" tabindex="3"><img src="https://i.loli.net/2020/12/20/vX6MG5q2kDihpan.jpg" alt="Snipaste_2020-11-23_20-30-45" loading="lazy"></figure>
-<h2 id="时间20201202">时间2020.12.02</h2>
-<h3 id="字典">字典</h3>
-<figure data-type="image" tabindex="4"><img src="data/Snipaste_2020-12-02_21-59-46.jpg" alt="Snipaste_2020-12-02_21-59-46" loading="lazy"></figure>
-<h2 id="时间2020-12-04">时间2020-12-04</h2>
-<p><a href="https://blog.csdn.net/xcyansun/article/details/79672634">Python中关键字global与nonlocal的区别</a></p>
+<h2 id="8-字典">8. 字典</h2>
+<p>时间2020.12.02</p>
+<figure data-type="image" tabindex="4"><img src="https://i.loli.net/2020/12/21/FRlcOYpEWrKL7kQ.jpg" alt="Snipaste_2020-12-02_21-59-46" loading="lazy"></figure>
+<h2 id="9-python中关键字global与nonlocal的区别">9. <a href="https://blog.csdn.net/xcyansun/article/details/79672634">Python中关键字global与nonlocal的区别</a></h2>
+<p>时间2020-12-04</p>
 <p>第一，两者的功能不同。global关键字修饰变量后标识该变量是全局变量，对该变量进行修改就是修改全局变量，而nonlocal关键字修饰变量后标识该变量是上一级函数中的局部变量，如果上一级函数中不存在该局部变量，nonlocal位置会发生错误（最上层的函数使用nonlocal修饰变量必定会报错）</p>
 <p>第二，两者使用的范围不同。global关键字可以用在任何地方，包括最上层函数中和嵌套函数中，即使之前未定义该变量，global修饰后也可以直接使用，而nonlocal关键字只能用于嵌套函数中，并且外层函数中定义了相应的局部变量，否则会发生错误（见第一）</p>
-<h2 id="时间2020-12-20">时间2020-12-20</h2>
+<h2 id="10-进程-线程和协程">10. 进程、线程和协程</h2>
+<p>时间2020-12-20</p>
+<h3 id="101-进程和线程">10.1 进程和线程</h3>
 <p>讲解最清晰的线程和进程视频：https://www.bilibili.com/video/BV1fz4y1D7tU?p=16</p>
 <p>协程：https://www.bilibili.com/video/BV1Ke411W71L?p=3</p>
-<h3 id="协程">协程</h3>
+<h3 id="102-协程">10.2 协程</h3>
 <p>笔记连接：https://pythonav.com/wiki/detail/6/91/</p>
 <p>协程函数，定义函数时候<code>async def 函数名</code></p>
 <p>协程对象，执行 协程函数（）得到的协程对象</p>
@@ -210,7 +222,7 @@ end
 I/O请求结束，结果为： fanhuizhi
 </code></pre>
 <p>await就是等待对象的值得到结果之后再继续往下走。</p>
-<h3 id="task对象">Task对象</h3>
+<h4 id="1021-task对象">10.2.1 Task对象</h4>
 <p>在事件循环中添加多个任务</p>
 <pre><code class="language-python">import asyncio
 
